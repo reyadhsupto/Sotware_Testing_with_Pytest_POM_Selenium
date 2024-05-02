@@ -1,8 +1,11 @@
 import pytest
-import os
+import sys, os
+# sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
 # from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver import ChromeOptions,FirefoxOptions
 from selenium import webdriver
+# from utilities.customLogger import LogGen
+# logger = LogGen.loggen()
 
 @pytest.fixture(params=['chrome','firefox'], scope='class')
 def init_driver(request):
@@ -26,6 +29,8 @@ def init_driver(request):
 
     yield
     driver.quit()
+
+
 
 # @pytest.hookimpl(hookwrapper=True)
 # def pytest_runtest_makereport(item, call):
