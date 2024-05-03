@@ -54,7 +54,7 @@ class AddCustomer:
 
     def setCustomerRoles(self,role):
         self.driver.find_element(*self.txtcustomerRoles_xpath).click()
-        time.sleep(3)
+        # time.sleep(3)
         if role == 'Registered':
             self.listitem = self.driver.find_element(*self.lstitemRegistered_xpath)
         elif role=='Administrators':
