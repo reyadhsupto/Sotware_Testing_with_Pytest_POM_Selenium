@@ -10,10 +10,10 @@ from selenium import webdriver
 @pytest.fixture(params=['chrome','firefox'], scope='class')
 def init_driver(request):
     if request.param == 'chrome':
-        options = ChromeOptions()
-        options.add_argument('--headless=new')
-        driver = webdriver.Chrome(options=options)
-        # driver = webdriver.Chrome()
+        # options = ChromeOptions()
+        # options.add_argument('--headless=new')
+        # driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome()
 
 
     if request.param == 'firefox':
