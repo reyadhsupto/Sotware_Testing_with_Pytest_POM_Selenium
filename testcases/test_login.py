@@ -17,6 +17,8 @@ class Test_001_Login:
     password = ReadConfig.getPassword()
     logger = LogGen.loggen()
 
+
+    @pytest.mark.regression
     def test_homepage_Title(self):
         self.logger.info("******Test_001 Login******")
         self.driver.get(self.base_url)
@@ -24,6 +26,8 @@ class Test_001_Login:
         self.logger.info("******Verifying Login Page Title******")
         assert self.driver.title == actual_title , f"Error Login page title not accurate"
 
+    @pytest.mark.sanity
+    @pytest.mark.regression
     def test_Login(self):
         self.driver.get(self.base_url)
         self.lp = LoginPage(self.driver)

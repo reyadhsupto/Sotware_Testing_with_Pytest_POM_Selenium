@@ -19,6 +19,8 @@ class Test_002_DDT_Login:
     logger = LogGen.loggen()
     path = os.path.normpath("E:\Internship\SDET_selenium\Sotware_Testing_with_Pytest_POM_Selenium\TestData\LoginData.xlsx")
 
+
+    @pytest.mark.regression
     def test_Login(self):
         self.driver.get(self.base_url)
         self.lp = LoginPage(self.driver)

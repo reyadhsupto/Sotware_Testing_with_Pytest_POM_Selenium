@@ -8,7 +8,7 @@ class Test_SearchCustomerByEmail_004(BaseTest):
     # def __init__(self,driver):
     #     super().__init__(driver)
     testbase = BaseTest()
-    # @pytest.mark.regression
+    @pytest.mark.regression
     def test_SearchCustomerByEmail(self):
         # self.testbase = BaseTest()
         

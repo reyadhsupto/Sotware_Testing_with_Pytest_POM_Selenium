@@ -18,7 +18,6 @@ class Test_003_AddCustomer:
     logger = LogGen.loggen()  # Logger
 
     @pytest.mark.sanity
-    @pytest.mark.regression
     def test_addCustomer(self):
         self.logger.info("************* Test_003_AddCustomer **********")
         self.driver.get(self.baseURL)

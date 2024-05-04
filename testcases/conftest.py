@@ -27,18 +27,22 @@ def init_driver(request):
     yield
     driver.quit()
 
+# def pytest_html_configure_metadata(metadata):
+#     metadata['Project Name'] = 'nopCommerce Automation Testing'
+#     metadata['Python Version'] = platform.python_version()  # Replace with your Python version
+#     metadata['Tester'] = "Reyad Hassan"
 
-# It is a hook for Adding Environment info to HTML Report
-def pytest_configure(config):
-    config._metadata['Project Name'] = 'nopCommerce Automation Testing'
-    config._metadata['Python Version'] = platform.python_version()
-    config._metadata['Tester'] = 'Reyad Hassan'  # Replace 'Your Name' with the actual tester's name
+# # It is a hook for Adding Environment info to HTML Report
+# def pytest_configure(config):
+#     config._metadata['Project Name'] = 'nopCommerce Automation Testing'
+#     config._metadata['Python Version'] = platform.python_version()
+#     config._metadata['Tester'] = 'Reyad Hassan'  # Replace 'Your Name' with the actual tester's name
 
-# It is a hook for delete/Modify Environment info to HTML Report
-@pytest.mark.optionalhook
-def pytest_metadata(metadata):
-    metadata.pop("JAVA_HOME", None)
-    metadata.pop("Plugins", None)
+# # It is a hook for delete/Modify Environment info to HTML Report
+# @pytest.mark.optionalhook
+# def pytest_metadata(metadata):
+#     metadata.pop("JAVA_HOME", None)
+#     metadata.pop("Plugins", None)
 
 
 # @pytest.hookimpl(hookwrapper=True)

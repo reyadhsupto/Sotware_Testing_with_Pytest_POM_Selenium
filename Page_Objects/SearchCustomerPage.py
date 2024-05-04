@@ -10,7 +10,7 @@ class SearchCustomer():
     txtFirstName_id= (By.ID, 'SearchFirstName')
     txtLastName_id= (By.ID, 'SearchLastName')
     btnSearch_id= (By.XPATH, "//button[@id='search-customers']")
-    # tblSearchResults_xpath="//table[@role='grid']"
+   
     table_xpath= (By.XPATH, "//table[@id='customers-grid']")
     tableRows_xpath= (By.XPATH, "//table[@id='customers-grid']/tbody/tr")
     tableColumns_xpath= (By.XPATH, "//table[@id='customers-grid']/tbody/tr/td")
