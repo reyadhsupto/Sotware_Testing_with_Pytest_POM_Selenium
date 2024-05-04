@@ -1,19 +1,16 @@
 import pytest
-import sys, os
-# sys.path.append(os.path.realpath(os.path.dirname(__file__)+"/.."))
-# from selenium.webdriver.support.ui import WebDriverWait
+import platform
+
 from selenium.webdriver import ChromeOptions,FirefoxOptions
 from selenium import webdriver
-# from utilities.customLogger import LogGen
-# logger = LogGen.loggen()
 
 @pytest.fixture(params=['chrome','firefox'], scope='class')
 def init_driver(request):
     if request.param == 'chrome':
-        # options = ChromeOptions()
-        # options.add_argument('--headless=new')
-        # driver = webdriver.Chrome(options=options)
-        driver = webdriver.Chrome()
+        options = ChromeOptions()
+        options.add_argument('--headless=new')
+        driver = webdriver.Chrome(options=options)
+        # driver = webdriver.Chrome()
 
 
     if request.param == 'firefox':
@@ -30,6 +27,18 @@ def init_driver(request):
     yield
     driver.quit()
 
+
+# It is a hook for Adding Environment info to HTML Report
+def pytest_configure(config):
+    config._metadata['Project Name'] = 'nopCommerce Automation Testing'
+    config._metadata['Python Version'] = platform.python_version()
+    config._metadata['Tester'] = 'Reyad Hassan'  # Replace 'Your Name' with the actual tester's name
+
+# It is a hook for delete/Modify Environment info to HTML Report
+@pytest.mark.optionalhook
+def pytest_metadata(metadata):
+    metadata.pop("JAVA_HOME", None)
+    metadata.pop("Plugins", None)
 
 
 # @pytest.hookimpl(hookwrapper=True)
